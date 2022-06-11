@@ -64,6 +64,126 @@ Electra ESP8266 or ESP32 TFT Touch mDNS Wifi Relais<br>
   <h1>Hey Electra</h1>
   Warning Fiddleing with Electra can Kill you!<br>
   Handle Electra with Care!<br>
+     
+      
+  <div class="scene">
+  <div class="cube">
+    <div class="side back"></div>
+    <div class="side left"></div>
+    <div class="side right"></div>
+    <div class="side top"></div>
+    <div class="side bottom"></div>
+    <div class="side front"></div>
+  </div>
+</div>
+<script>
+{
+  box-sizing: border-box;
+  transition: .3s;
+}
+
+$size-px: 300px;
+$size: 300;
+$size-lg: $size * 1.5;
+$transform: $size-px / 2;
+
+
+html, body {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.scene {
+  perspective: 800px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  background: url('https://i.imgur.com/2WQui47.jpg');
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  
+  &:hover {
+    transform: scale(1.5);
+    
+    .side {
+      opacity: 1;
+    }
+  }
+  
+  
+}
+
+.cube {
+  transform-style: preserve-3d;
+  position: relative;
+  width: $size-px;
+  height: $size-px;
+  animation: rotate 10s ease-in-out infinite;
+  transform-origin: center center;
+}
+
+.side {
+  position: absolute;
+  width: $size-px;
+  height: $size-px;
+  background-color: #333;
+  opacity: .95;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.back {
+  transform: translateZ(-#{$transform}) rotateX(180deg);
+  background-image: url(https://github.com/ldijkman/randomnerd_esp32_wifi_manager/blob/main/Electra.png?raw=true);
+}
+
+.left {
+  transform: translateX(-#{$transform}) rotateY(90deg);
+  background-image: url(https://github.com/ldijkman/randomnerd_esp32_wifi_manager/blob/main/Electra.png?raw=true);
+}
+
+.right {
+  transform: translateX($transform) rotateY(90deg);
+  background-image: url(https://github.com/ldijkman/randomnerd_esp32_wifi_manager/blob/main/Electra.png?raw=true);
+}
+
+.top {
+  transform: translateY(-#{$transform}) rotateX(90deg);
+  background-image: url(https://github.com/ldijkman/randomnerd_esp32_wifi_manager/blob/main/Electra.png?raw=true);
+}
+
+.bottom {
+  transform: translateY($transform) rotateX(270deg);
+  background-image: url(https://github.com/ldijkman/randomnerd_esp32_wifi_manager/blob/main/Electra.png?raw=true);
+}
+
+.front {
+  transform: translateZ($transform);
+  background-image: url(https://github.com/ldijkman/randomnerd_esp32_wifi_manager/blob/main/Electra.png?raw=true);
+}
+
+@keyframes rotate {
+  0% { transform: rotateX(0)}
+  12.5% { transform: rotateY(90deg)}
+  25% { transform: rotateY(270deg)}
+  37.5% { transform: rotateY(270deg)}
+  50% { transform: rotateY(360deg)}
+  62.5% { transform: rotateX(90deg)}
+  75% { transform: rotateX(180deg)}
+  87.5% { transform: rotateX(270deg)}
+  100% { transform: rotateX(360deg)}
+}
+</script>
+  
+  
+  
+  
+      
+      
       </center>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js" integrity="sha256-lZaRhKri35AyJSypXXs4o6OPFTbTmUoltBbDCbdzegg=" crossorigin="anonymous"></script>
