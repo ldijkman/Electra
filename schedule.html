@@ -10,11 +10,11 @@
   
 <!-- Copyright 2022 Dirk Luberth Dijkman Bangert Andijk The Netherlands -->
 
-  <script
+  <t
     type="text/javascript"
     src="/js/lib/dummy.js"
     
-  ></script>
+  ></t>
 
     <link rel="stylesheet" type="text/css" href="/css/result-light.css">
 
@@ -199,6 +199,9 @@ https://cdnjs.com/libraries/noUiSlider<br>
 <br><b>writes time data to browser developer console on slider change</b><br>
 open console with keyboard shortcut Ctrl Shift J (on Windows & raspberry pi)<br>	
 Later for JSon data pass??? from browser to ESP8266 ESP8285<br>
+<br>
+if the page is served from ESP32, chromium inspect network ws send <br>
+now shows the json websocket send<br> 
 <br>
 <hr>
 <input type="checkbox" id ="checkmonday" name="checkmonday" onchange="boxes(); writetoconsole(monday);" checked><b>Monday</b> 
@@ -1498,6 +1501,7 @@ function writetoconsole(wich) { // wich holds wich day slider
   console.log(wich.id + " ON OFF times in minutes ");
   console.log("hours x 60 + minutes = timeinminutes");
   let boxstate=document.getElementById("check"+wich.id).checked;
+  if(boxstate){ boxstate=1;} else {boxstate=0;}                         // make true, false into 1, 0
   
    websocket.send(JSON.stringify({times : wich.id +","+ boxstate+","+ convertH2M(fruits[0])+","+convertH2M(fruits[1])+","+convertH2M(fruits[2])+","+convertH2M(fruits[3])+","+convertH2M(fruits[4])+","+convertH2M(fruits[5])}));
    
