@@ -87,7 +87,10 @@
 
 
 
-//<!-- tryng to mak a marker for current actual time -->
+// <!-- tryng to mak a marker for current actual time -->
+// my slider is 1440 minutes long wich is a day
+// so actual (hours x 60 + minutes)/1440 x 100% is actual percentage on slider
+// 50% is 12 o clock
 document.addEventListener('DOMContentLoaded', function() {
   var l = document.createElement('div');
   var bookStyles = {
