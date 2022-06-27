@@ -87,15 +87,16 @@
 
 
 
-
+//<!-- tryng to mak a marker for current actual time -->
 document.addEventListener('DOMContentLoaded', function() {
   var l = document.createElement('div');
   var bookStyles = {
+    position: "absolute",
    color: "red",
    backgroundColor: "blue",
    height: "30px",
-   width: "100%",
-   left: "76%"
+   width: "6px",
+   left: "50%"
 };
   for (let style in bookStyles) {
  l.style[style] = bookStyles[style];
