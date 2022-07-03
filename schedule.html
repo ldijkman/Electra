@@ -391,6 +391,7 @@ xx.innerHTML = "geolocation";
 
 var lat;
 var lon;
+var succes=0;
  
  function onSuccess(geolocationData) {
   x.innerHTML = 'Success!';
@@ -415,7 +416,7 @@ var lon;
     lat=geolocationData.coords.latitude; 
     lon=geolocationData.coords.longitude;
   xx.innerHTML = "Latitude: " + lat+ "<br>Longitude: " + lon;
-  
+  succes=1;
 }
 
 
@@ -2068,7 +2069,7 @@ function myGreeting() {
 // https://www.latlong.net/
 
 // get today's sunlight times for                          // https://www.latlong.net/
-if(lat && lon){
+if(succes){
 var times = SunCalc.getTimes(new Date(), lat, lon); // https://www.google.com/search?q=map+52.7354%2C+5.1790
 }else{
 var times = SunCalc.getTimes(new Date(), 52.7354, 5.1790);
