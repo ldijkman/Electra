@@ -380,53 +380,6 @@ now shows the json websocket send<br>
 <p id="demo2"></p>
 <hr>
 <script>
-var x = document.getElementById("demo");
-var xx = document.getElementById("demo2");
-
-x.innerHTML = "geolocation";
-xx.innerHTML = "geolocation";
-  
-   navigator.geolocation.getCurrentPosition(onSuccess, onError);
-
-
-var lat;
-var lon;
-var succes=0;
- 
- function onSuccess(geolocationData) {
-  x.innerHTML = 'Success!';
-  
-  // GeolocationData can't be serialized to JSON,
-  // so copy out all the properties manually
-  let preview = {
-    coords: {
-      accuracy: geolocationData.coords.accuracy,
-      altitude: geolocationData.coords.altitude,
-      altitudeAccuracy: geolocationData.coords.altitudeAccuracy,
-      heading: geolocationData.coords.heading,
-      latitude: geolocationData.coords.latitude,
-      longitude: geolocationData.coords.longitude,
-      speed: geolocationData.coords.speed,
-    },
-    timestamp: geolocationData.timestamp
-  };
-  
-  x.innerHTML = JSON.stringify(preview, null, 2); 
-  
-    lat=geolocationData.coords.latitude; 
-    lon=geolocationData.coords.longitude;
-  xx.innerHTML = "Latitude: " + lat+ "<br>Longitude: " + lon;
-  succes=1;
-}
-
-
-  
-function onError(error) {
-  x.innerHTML = 'Error';
-  x.innerHTML = error.message;
-}
-
-
 
 
 
@@ -2055,6 +2008,57 @@ https://ldijkman.github.io/Electra<br>
 
 
 <script>
+
+var x = document.getElementById("demo");
+var xx = document.getElementById("demo2");
+
+x.innerHTML = "geolocation";
+xx.innerHTML = "geolocation";
+  
+   navigator.geolocation.getCurrentPosition(onSuccess, onError);
+
+
+var lat;
+var lon;
+var succes=0;
+ 
+ function onSuccess(geolocationData) {
+  x.innerHTML = 'Success!';
+  
+  // GeolocationData can't be serialized to JSON,
+  // so copy out all the properties manually
+  let preview = {
+    coords: {
+      accuracy: geolocationData.coords.accuracy,
+      altitude: geolocationData.coords.altitude,
+      altitudeAccuracy: geolocationData.coords.altitudeAccuracy,
+      heading: geolocationData.coords.heading,
+      latitude: geolocationData.coords.latitude,
+      longitude: geolocationData.coords.longitude,
+      speed: geolocationData.coords.speed,
+    },
+    timestamp: geolocationData.timestamp
+  };
+  
+  x.innerHTML = JSON.stringify(preview, null, 2); 
+  
+    lat=geolocationData.coords.latitude; 
+    lon=geolocationData.coords.longitude;
+  xx.innerHTML = "Latitude: " + lat+ "<br>Longitude: " + lon;
+  succes=1;
+}
+
+
+  
+function onError(error) {
+  x.innerHTML = 'Error';
+  x.innerHTML = error.message;
+}
+
+
+
+
+
    document.addEventListener('DOMContentLoaded', function() {
 
        setInterval(myGreeting, 1000);        // interval 1 sec for time on div class actualtime
