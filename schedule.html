@@ -2044,10 +2044,11 @@ if(sunsetmin<=9)sunsetmin="0"+sunsetmin;                        // 0-9 add a zer
 var sunsetStr = times.sunset.getHours() + ':' + sunsetmin;
 
 var currents=((times.sunrise.getHours()*60+times.sunrise.getMinutes())/1440)*100; ;
-   document.getElementsByClassName('sunrisel')[0].style.left = currents+"%";   // time to percentage 0 to 100% set div position
+  for (let i = 0; i < 11; i++) {  
+   document.getElementsByClassName('sunrisel')[i].style.left = currents+"%";   // time to percentage 0 to 100% set div position
   
-   document.getElementsByClassName('sunrisel')[0].innerHTML = "<br><br><br>sunrise "+times.sunrise.getHours()+":"+sunrisemin; // set time text on div class actualtime
- 
+   document.getElementsByClassName('sunrisel')[i].innerHTML = "<br><br><br>sunrise "+times.sunrise.getHours()+":"+sunrisemin; // set time text on div class actualtime
+  }
 
 // get position of the sun (azimuth and altitude) at today's sunrise
 /////var sunrisePos = SunCalc.getPosition(times.sunrise, 52.7354, 5.1790);
