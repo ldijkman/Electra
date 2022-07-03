@@ -96,7 +96,7 @@
   <!--https://www.quackit.com/html/html_editors/scratchpad/?example=/css/codes/css_floating_menu_positioned-->
   <nav class="floating-menu">
     <!-- next some should be filled in by %% processor or ntp time json websocket-->
-    <a href="/">mDNS.local</a><a href="http://10.10.100.104">10.10.100.104</a><a href="/">NTP TIME</a><a href="/Electra/edit">WebEditor</a><a href="https://ldijkman.github.io/Electra/">Electra</a>
+    <a href="/">mDNS.local</a><a href="http://10.10.100.104">10.10.100.104</a><a href="/">NTP TIME</a><a href="/edit">WebEditor</a><a href="https://ldijkman.github.io/Electra/">Electra</a>
   </nav>
 </main>
 <!-- floating menu -->
@@ -409,9 +409,12 @@ xx.innerHTML = "geolocation";
     timestamp: geolocationData.timestamp
   };
   
-  x.innerHTML = JSON.stringify(preview, null, 2);  
+  x.innerHTML = JSON.stringify(preview, null, 2); 
   
-  xx.innerHTML = "Latitude: " + geolocationData.coords.latitude + "<br>Longitude: " + geolocationData.coords.longitude;
+  var lat=geolocationData.coords.latitude; 
+  var lon=geolocationData.coords.longitude;
+  
+  xx.innerHTML = "Latitude: " + lat+ "<br>Longitude: " + lon;
 }
 
 function onError(error) {
@@ -2062,7 +2065,13 @@ function myGreeting() {
 // https://www.latlong.net/
 
 // get today's sunlight times for                          // https://www.latlong.net/
-var times = SunCalc.getTimes(new Date(), 52.7354, 5.1790); // https://www.google.com/search?q=map+52.7354%2C+5.1790
+if(lat && lon){
+var times = SunCalc.getTimes(new Date(), lat, lon); // https://www.google.com/search?q=map+52.7354%2C+5.1790
+}else{
+var times = SunCalc.getTimes(new Date(), 52.7354, 5.1790);
+var lat=0;
+var lon=0;
+}
 
 // format sunrise time from the Date object
 var sunrisemin =times.sunrise.getMinutes();
@@ -2077,7 +2086,7 @@ var currents=((times.sunrise.getHours()*60+times.sunrise.getMinutes())/1440)*100
   for (let i = 0; i < 11; i++) {  
    document.getElementsByClassName('sunrisel')[i].style.left = currents+"%";   // time to percentage 0 to 100% set div position
   
-   document.getElementsByClassName('sunrisel')[i].innerHTML = "<br><br><br>sunrise "+times.sunrise.getHours()+":"+sunrisemin; // set time text on div class actualtime
+   document.getElementsByClassName('sunrisel')[i].innerHTML = "<br><br><br>"+lat+","+lon +"<br>sunrise "+times.sunrise.getHours()+":"+sunrisemin; // set time text on div class actualtime
   }
   
 var currents=((times.sunset.getHours()*60+times.sunset.getMinutes())/1440)*100; ;
