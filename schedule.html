@@ -2076,7 +2076,9 @@ function myGreeting() {
 if(succes){
 var times = SunCalc.getTimes(new Date(), lat, lon); // https://www.google.com/search?q=map+52.7354%2C+5.1790
 }else{
-var times = SunCalc.getTimes(new Date(), 52.7354, 5.1790);
+  lat=52.7354;
+  lon=5.1790;
+var times = SunCalc.getTimes(new Date(),lat,lon);
 }
 
 // format sunrise time from the Date object
@@ -2124,13 +2126,13 @@ var currents=((times.sunset.getHours()*60+times.sunset.getMinutes())/1440)*100; 
 const sunrise = document.querySelectorAll('.sunrise');
 sunrise.forEach(sunrise => {
   //box.style.backgroundColor = 'purple'; box.style.width = '300px';
-  sunrise.innerHTML =("<a href='http://www.google.com/search?q=52.7354,5.1790'>SunRise&nbsp;"+sunriseStr)+"&nbsp;</a>";
+  sunrise.innerHTML =("<a href='http://www.google.com/search?q="+lat+","+lon+"'>SunRise&nbsp;"+sunriseStr)+"&nbsp;</a>";
 });
 
 const sunset = document.querySelectorAll('.sunset');
 sunset.forEach(sunset => {
   //box.style.backgroundColor = 'purple'; box.style.width = '300px';
-  sunset.innerHTML =("<a href='http://www.google.com/search?q=52.7354,5.1790'>SunSet&nbsp;"+sunsetStr)+"</a>&nbsp;&nbsp;&nbsp;"; 
+  sunset.innerHTML =("<a href='http://www.google.com/search?q="+lat+","+lon+"'>SunSet&nbsp;"+sunsetStr)+"</a>&nbsp;&nbsp;&nbsp;"; 
 });
   
   
