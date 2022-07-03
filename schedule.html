@@ -2046,7 +2046,7 @@ var sunsetStr = times.sunset.getHours() + ':' + sunsetmin;
 var currents=((times.sunrise.getHours()*60+times.sunrise.getMinutes())/1440)*100; ;
    document.getElementsByClassName('sunrisel')[0].style.left = currents+"%";   // time to percentage 0 to 100% set div position
   
-   document.getElementsByClassName('sunrisel')[0].innerHTML = "<br><br><br>sunrise "+times.sunrise.getHours()+":"+sunsetmin; // set time text on div class actualtime
+   document.getElementsByClassName('sunrisel')[0].innerHTML = "<br><br><br>sunrise "+times.sunrise.getHours()+":"+sunrisemin; // set time text on div class actualtime
  
 
 // get position of the sun (azimuth and altitude) at today's sunrise
