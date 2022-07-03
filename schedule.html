@@ -315,26 +315,19 @@ Later for JSon data pass??? from browser to ESP32 ESP8266 ESP8285<br>
 if the page is served from ESP32, chromium inspect network ws send <br>
 now shows the json websocket send<br> 
 <br>
+<hr>
 <h1>Browser geolocation must be https://</h1>
 <p id="demo"></p>
-
+<hr>
 <script>
 var x = document.getElementById("demo");
 x.innerHTML = "geolocation";
-
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(showPosition);
-  } else { 
-    x.innerHTML = "Geolocation is not supported by this browser.";
-  }
+xx.innerHTML = "geolocation";
   
    navigator.geolocation.getCurrentPosition(onSuccess, onError);
 
 
-function showPosition(position) {
-  x.innerHTML = "Latitude: " + position.coords.latitude + 
-  "<br>Longitude: " + position.coords.longitude;
-}
+
  
  function onSuccess(geolocationData) {
   x.innerHTML = 'Success!';
@@ -354,13 +347,19 @@ function showPosition(position) {
     timestamp: geolocationData.timestamp
   };
   
-  x.innerHTML = JSON.stringify(preview, null, 2);
+  x.innerHTML = JSON.stringify(preview, null, 2);  
+  
+  xx.innerHTML = "Latitude: " + geolocationData.coords.latitude + "<br>Longitude: " + geolocationData.coords.longitude;
 }
 
 function onError(error) {
   x.innerHTML = 'Error';
   x.innerHTML = error.message;
 }
+
+
+
+
 
 </script>
 
