@@ -411,11 +411,12 @@ xx.innerHTML = "geolocation";
   
   x.innerHTML = JSON.stringify(preview, null, 2); 
   
-  var lat=geolocationData.coords.latitude; 
-  var lon=geolocationData.coords.longitude;
   
   xx.innerHTML = "Latitude: " + lat+ "<br>Longitude: " + lon;
 }
+
+  var lat=geolocationData.coords.latitude; 
+  var lon=geolocationData.coords.longitude;
 
 function onError(error) {
   x.innerHTML = 'Error';
