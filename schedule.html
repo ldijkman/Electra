@@ -412,12 +412,13 @@ xx.innerHTML = "geolocation";
   x.innerHTML = JSON.stringify(preview, null, 2); 
   
   
-  xx.innerHTML = "Latitude: " + lat+ "<br>Longitude: " + lon;
+  
 }
 
-  var lat=geolocationData.coords.latitude; 
-  var lon=geolocationData.coords.longitude;
-
+  var lat=navigator.geolocationData.coords.latitude; 
+  var lon=navigator.geolocationData.coords.longitude;
+  xx.innerHTML = "Latitude: " + lat+ "<br>Longitude: " + lon;
+  
 function onError(error) {
   x.innerHTML = 'Error';
   x.innerHTML = error.message;
