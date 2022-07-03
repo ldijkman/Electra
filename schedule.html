@@ -314,6 +314,59 @@ Later for JSon data pass??? from browser to ESP32 ESP8266 ESP8285<br>
 <br>
 if the page is served from ESP32, chromium inspect network ws send <br>
 now shows the json websocket send<br> 
+<br>
+<h1>Browser geolocation must be https://</h1>
+<p id="demo"></p>
+
+<script>
+var x = document.getElementById("demo");
+x.innerHTML = "geolocation";
+
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } else { 
+    x.innerHTML = "Geolocation is not supported by this browser.";
+  }
+  
+   navigator.geolocation.getCurrentPosition(onSuccess, onError);
+
+
+function showPosition(position) {
+  x.innerHTML = "Latitude: " + position.coords.latitude + 
+  "<br>Longitude: " + position.coords.longitude;
+}
+ 
+ function onSuccess(geolocationData) {
+  x.innerHTML = 'Success!';
+  
+  // GeolocationData can't be serialized to JSON,
+  // so copy out all the properties manually
+  let preview = {
+    coords: {
+      accuracy: geolocationData.coords.accuracy,
+      altitude: geolocationData.coords.altitude,
+      altitudeAccuracy: geolocationData.coords.altitudeAccuracy,
+      heading: geolocationData.coords.heading,
+      latitude: geolocationData.coords.latitude,
+      longitude: geolocationData.coords.longitude,
+      speed: geolocationData.coords.speed,
+    },
+    timestamp: geolocationData.timestamp
+  };
+  
+  x.innerHTML = JSON.stringify(preview, null, 2);
+}
+
+function onError(error) {
+  x.innerHTML = 'Error';
+  x.innerHTML = error.message;
+}
+
+</script>
+
+
+
+
 <p id="MyAnchor" class="boldtitle">MyAnchorText</p>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#checkmonday">go to monday</a><br>
 <br>
