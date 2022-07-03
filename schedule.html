@@ -415,8 +415,8 @@ ON <input type ="time" id="tut5" oninput="timeset('tut5')"> OFF <input type ="ti
 <input type="button" value="PREVIOUS" onclick="scrollToAnchor('#checkmonday');">&nbsp;&nbsp;
 <input type="button" value="NEXT" onclick="scrollToAnchor('#checkwednesday');">
 </div>
-<div class="sunset"style="float: right;"></div>
-<div class="sunrise"style="float: right;"></div>
+<div class="sunset" style="float: right;"></div>
+<div class="sunrise" style="float: right;"></div>
 <br>
 </form>
 </div>
@@ -440,7 +440,10 @@ ON <input type ="time" id="wt5" oninput="timeset('wt5')"> OFF <input type ="time
 <div style="float: right;">
 <input type="button" value="PREVIOUS" onclick="scrollToAnchor('#checktuesday');">&nbsp;&nbsp;
 <input type="button" value="NEXT" onclick="scrollToAnchor('#checkthursday');">
-</div><br>
+</div>
+<div class="sunset" style="float: right;"></div>
+<div class="sunrise" style="float: right;"></div>
+<br>
 </form>
 </div>
 <hr>
@@ -466,7 +469,10 @@ ON <input type ="time" id="tht5" oninput="timeset('tht5')"> OFF <input type ="ti
 <div style="float: right;">
 <input type="button" value="PREVIOUS" onclick="scrollToAnchor('#checkwednesday');">&nbsp;&nbsp;
 <input type="button" value="NEXT" onclick="scrollToAnchor('#checkfriday');">
-</div><br>
+</div>
+<div class="sunset" style="float: right;"></div>
+<div class="sunrise" style="float: right;"></div>
+<br>
 </form>
 </div>
 <hr>
@@ -492,7 +498,10 @@ ON <input type ="time" id="frt5" oninput="timeset('frt5')"> OFF <input type ="ti
 <div style="float: right;">
 <input type="button" value="PREVIOUS" onclick="scrollToAnchor('#checkthursday');">&nbsp;&nbsp;
 <input type="button" value="NEXT" onclick="scrollToAnchor('#checksaturday');">
-</div><br>
+</div>
+<div class="sunset" style="float: right;"></div>
+<div class="sunrise" style="float: right;"></div>
+<br>
 </form>
 </div>
 <hr>
@@ -518,7 +527,10 @@ ON <input type ="time" id="sat5" oninput="timeset('sat5')"> OFF <input type ="ti
 <div style="float: right;">
 <input type="button" value="PREVIOUS" onclick="scrollToAnchor('#checkfriday');">&nbsp;&nbsp;
 <input type="button" value="NEXT" onclick="scrollToAnchor('#checksunday');">
-</div><br>
+</div>
+<div class="sunset" style="float: right;"></div>
+<div class="sunrise" style="float: right;"></div>
+<br>
 </form>
 </div>
 <hr>
@@ -543,7 +555,10 @@ ON <input type ="time" id="sut5" oninput="timeset('sut5')"> OFF <input type ="ti
 <div style="float: right;">
 <input type="button" value="PREVIOUS" onclick="scrollToAnchor('#checksaturday');">&nbsp;&nbsp;
 <input type="button" value="NEXT" onclick="scrollToAnchor('#checkeveryday');">
-</div><br>
+</div>
+<div class="sunset" style="float: right;"></div>
+<div class="sunrise" style="float: right;"></div>
+<br>
 </form>
 </div>
 <hr>
@@ -567,7 +582,10 @@ ON <input type ="time" id="edt5" oninput="timeset('edt5')"> OFF <input type ="ti
 <div style="float: right;">
 <input type="button" value="PREVIOUS" onclick="scrollToAnchor('#checksunday');">&nbsp;&nbsp;
 <input type="button" value="NEXT" onclick="scrollToAnchor('#checkweekdays');">
-</div><br>
+</div>
+<div class="sunset" style="float: right;"></div>
+<div class="sunrise" style="float: right;"></div>
+<br>
 </form>
 <hr>
 
@@ -589,7 +607,10 @@ ON <input type ="time" id="wdt5" oninput="timeset('wdt5')"> OFF <input type ="ti
 <div style="float: right;">
 <input type="button" value="PREVIOUS" onclick="scrollToAnchor('#checkeveryday');">&nbsp;&nbsp;
 <input type="button" value="NEXT" onclick="scrollToAnchor('#checkweekends');">
-</div><br>
+</div>
+<div class="sunset" style="float: right;"></div>
+<div class="sunrise" style="float: right;"></div>
+<br>
 </form>
 <hr>
 
@@ -611,7 +632,10 @@ ON <input type ="time" id="wendt5" oninput="timeset('wendt5')"> OFF <input type 
 <div style="float: right;">
 <input type="button" value="PREVIOUS" onclick="scrollToAnchor('#checkweekdays');">&nbsp;&nbsp;
 <input type="button" value="NEXT" onclick="scrollToAnchor('#checkudd');">
-</div><br>
+</div>
+<div class="sunset" style="float: right;"></div>
+<div class="sunrise" style="float: right;"></div>
+<br>
 </form>
 <hr><input type="checkbox" id ="checkudd" name="checkudd"><b>User Defined Days</b><br>
 <table style="border-collapse: collapse;" border = "1">
@@ -650,7 +674,11 @@ ON <input type ="time" class="check" id="udt5" oninput="timeset('udt5')"> OFF <i
 <br>
 <div style="float: right;">
 <input type="button" value="Go to Monday" onclick="scrollToAnchor('#checkmonday');">
+<br>
 </div>
+<div class="sunset" style="float: right;"></div>
+<div class="sunrise" style="float: right;"></div>
+<br>
 </form>
 <hr>
 
@@ -2001,11 +2029,22 @@ var sunsetStr = times.sunset.getHours() + ':' + sunsetmin;
 
 //console.log(sunrisePos);
 //console.log(sunriseAzimuth);
-document.getElementsByClassName('sunrise')[0].innerHTML =("<a href='http://www.google.com/search?q=52.7354,5.1790'>52.7354, 5.1790 </a> sunrise "+sunriseStr)+" ";
-document.getElementsByClassName('sunset')[0].textContent =(" sunset "+sunsetStr)+" ";
-document.getElementsByClassName('sunrise')[1].innerHTML =("<a href='http://www.google.com/search?q=52.7354,5.1790'>52.7354, 5.1790 </a> sunrise "+sunriseStr+" ");
-document.getElementsByClassName('sunset')[1].textContent =(" sunset "+sunsetStr)+" ";  
+//document.getElementsByClassName('sunrise')[0].innerHTML =("<a href='http://www.google.com/search?q=52.7354,5.1790'>52.7354, 5.1790 </a> sunrise "+sunriseStr)+" ";
+//document.getElementsByClassName('sunset')[0].textContent =(" sunset "+sunsetStr)+" ";
+//document.getElementsByClassName('sunrise')[1].innerHTML =("<a href='http://www.google.com/search?q=52.7354,5.1790'>52.7354, 5.1790 </a> sunrise "+sunriseStr+" ");
+//document.getElementsByClassName('sunset')[1].textContent =(" sunset "+sunsetStr)+" ";  
   
+const sunrise = document.querySelectorAll('.sunrise');
+sunrise.forEach(sunrise => {
+  //box.style.backgroundColor = 'purple'; box.style.width = '300px';
+  sunrise.innerHTML =("<a href='http://www.google.com/search?q=52.7354,5.1790'>SunRise&nbsp;"+sunriseStr)+"&nbsp;</a>";
+});
+
+const sunset = document.querySelectorAll('.sunset');
+sunset.forEach(sunset => {
+  //box.style.backgroundColor = 'purple'; box.style.width = '300px';
+  sunset.innerHTML =("<a href='http://www.google.com/search?q=52.7354,5.1790'>SunSet&nbsp;"+sunsetStr)+"&nbsp;</a>"; 
+});
   
   
   const now = new Date();
