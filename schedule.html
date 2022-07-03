@@ -136,6 +136,9 @@ for (let style in bookStyles) {
  }
  
  
+ 
+ 
+ 
    var ll = document.createElement('div');                                        // create a div class actualtime on div nouibase 
   ll.setAttribute("id", "sunrisel");
   ll.setAttribute("class", "sunrisel");
@@ -145,7 +148,7 @@ for (let style in bookStyles) {
    backgroundColor: "blue",
    height: "60px",
    width: "1px",
-   left: "20%",
+   left: "0%",
    top: "-1px"
 };
 
@@ -157,6 +160,33 @@ ll.innerHTML = "<br><br><br>sunrise";
  
   for (let i = 0; i < 11; i++) {  
   document.getElementsByClassName('noUi-base')[i].appendChild(ll.cloneNode(true));   // create a div class actualtime on div nouibase
+ }
+  
+ 
+ 
+ 
+ 
+   var lll = document.createElement('div');                                        // create a div class actualtime on div nouibase 
+  lll.setAttribute("id", "sunsetl");
+  lll.setAttribute("class", "sunsetl");
+  var bookStyles = {
+    position: "absolute",
+   color: "red",
+   backgroundColor: "blue",
+   height: "60px",
+   width: "1px",
+   left: "100%",
+   top: "-1px"
+};
+
+lll.innerHTML = "<br><br><br>sunset";
+ 
+ for (let style in bookStyles) {
+ lll.style[style] = bookStyles[style];
+}
+ 
+  for (let i = 0; i < 11; i++) {  
+  document.getElementsByClassName('noUi-base')[i].appendChild(lll.cloneNode(true));   // create a div class actualtime on div nouibase
  }
  
  
@@ -2049,6 +2079,13 @@ var currents=((times.sunrise.getHours()*60+times.sunrise.getMinutes())/1440)*100
   
    document.getElementsByClassName('sunrisel')[i].innerHTML = "<br><br><br>sunrise "+times.sunrise.getHours()+":"+sunrisemin; // set time text on div class actualtime
   }
+  
+var currents=((times.sunset.getHours()*60+times.sunset.getMinutes())/1440)*100; ;
+  for (let i = 0; i < 11; i++) {  
+   document.getElementsByClassName('sunsetl')[i].style.left = currents+"%";   // time to percentage 0 to 100% set div position
+  
+   document.getElementsByClassName('sunsetl')[i].innerHTML = "<br><br><br>sunset "+times.sunset.getHours()+":"+sunsetmin; // set time text on div class actualtime
+  }  
 
 // get position of the sun (azimuth and altitude) at today's sunrise
 /////var sunrisePos = SunCalc.getPosition(times.sunrise, 52.7354, 5.1790);
