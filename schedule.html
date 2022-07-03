@@ -2094,7 +2094,7 @@ var currents=((times.sunrise.getHours()*60+times.sunrise.getMinutes())/1440)*100
   for (let i = 0; i < 11; i++) {  
    document.getElementsByClassName('sunrisel')[i].style.left = currents+"%";   // time to percentage 0 to 100% set div position
   
-   document.getElementsByClassName('sunrisel')[i].innerHTML = "<br><br><br>"+lat+","+lon +"<br>sunrise "+times.sunrise.getHours()+":"+sunrisemin; // set time text on div class actualtime
+   document.getElementsByClassName('sunrisel')[i].innerHTML = "<br><br><br>sunrise "+times.sunrise.getHours()+":"+sunrisemin; // set time text on div class actualtime
   }
   
 var currents=((times.sunset.getHours()*60+times.sunset.getMinutes())/1440)*100; ;
@@ -2126,7 +2126,7 @@ var currents=((times.sunset.getHours()*60+times.sunset.getMinutes())/1440)*100; 
 const sunrise = document.querySelectorAll('.sunrise');
 sunrise.forEach(sunrise => {
   //box.style.backgroundColor = 'purple'; box.style.width = '300px';
-  sunrise.innerHTML =("<a href='http://www.google.com/search?q="+lat+","+lon+"'>SunRise&nbsp;"+sunriseStr)+"&nbsp;</a>";
+  sunrise.innerHTML =(lat+","+lon+"&nbsp;<a href='http://www.google.com/search?q="+lat+","+lon+"'>SunRise&nbsp;"+sunriseStr)+"&nbsp;</a>";
 });
 
 const sunset = document.querySelectorAll('.sunset');
