@@ -389,7 +389,8 @@ xx.innerHTML = "geolocation";
    navigator.geolocation.getCurrentPosition(onSuccess, onError);
 
 
-
+var lat;
+var lon;
  
  function onSuccess(geolocationData) {
   x.innerHTML = 'Success!';
@@ -411,8 +412,8 @@ xx.innerHTML = "geolocation";
   
   x.innerHTML = JSON.stringify(preview, null, 2); 
   
-    let lat=geolocationData.coords.latitude; 
-    let lon=geolocationData.coords.longitude;
+    lat=geolocationData.coords.latitude; 
+    lon=geolocationData.coords.longitude;
   xx.innerHTML = "Latitude: " + lat+ "<br>Longitude: " + lon;
   
 }
