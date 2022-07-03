@@ -1282,6 +1282,7 @@ function mergeTooltips(slider, threshold, separator) {
             var handlesInPool = pool.length;
 
             for (var j = 0; j < handlesInPool; j++) {
+              
                 var handleNumber = pool[j];
 
                 if (j === handlesInPool - 1) {
@@ -1297,6 +1298,7 @@ function mergeTooltips(slider, threshold, separator) {
                     offset = (textIsRtl && !isVertical ? 100 : 0) + (offset / handlesInPool) - lastOffset;
 
                     // Center this tooltip over the affected handles
+                    if (j==2){separator="|";}else{separator="-";}
                     tooltips[handleNumber].innerHTML = poolValues[poolIndex].join(separator);
                     tooltips[handleNumber].style.display = 'block';
                     tooltips[handleNumber].style[direction] = offset + '%';
@@ -1986,15 +1988,17 @@ if(sunsetmin<=9)sunsetmin="0"+sunsetmin;                        // 0-9 add a zer
 var sunsetStr = times.sunset.getHours() + ':' + sunsetmin;
 
 // get position of the sun (azimuth and altitude) at today's sunrise
-var sunrisePos = SunCalc.getPosition(times.sunrise, 52.7354, 5.1790);
+/////var sunrisePos = SunCalc.getPosition(times.sunrise, 52.7354, 5.1790);
 
 // get sunrise azimuth in degrees
-var sunriseAzimuth = sunrisePos.azimuth * 180 / Math.PI;
+/////var sunriseAzimuth = sunrisePos.azimuth * 180 / Math.PI;
 
 // https://github.com/mourner/suncalc
 //console.log(times);
-console.log("sunrise "+sunriseStr);
-console.log("sunset "+sunsetStr);
+
+/////console.log("sunrise "+sunriseStr);
+/////console.log("sunset "+sunsetStr);
+
 //console.log(sunrisePos);
 //console.log(sunriseAzimuth);
 document.getElementsByClassName('sunrise')[0].innerHTML =("<a href='http://www.google.com/search?q=52.7354,5.1790'>52.7354, 5.1790 </a> sunrise "+sunriseStr)+" ";
@@ -2020,7 +2024,7 @@ document.getElementsByClassName('sunset')[1].textContent =(" sunset "+sunsetStr)
    
    document.getElementsByClassName('actualtime')[i].style.left = current+"%";   // time to percentage 0 to 100% set div position
   
-   document.getElementsByClassName('actualtime')[i].innerHTML = "<br><br><br>" +dayName+" "+now.getHours()+":"+min+":"+sec; // set time text on div class actualtime
+   document.getElementsByClassName('actualtime')[i].innerHTML = "<div><br><br><br>" +dayName+" "+now.getHours()+":"+min+":"+sec+"</div>"; // set time text on div class actualtime
  
  }// end for
    
