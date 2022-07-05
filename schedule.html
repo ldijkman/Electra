@@ -2186,20 +2186,23 @@ sunset.forEach(sunset => {
    
    
 if(document.getElementById("checkmonday").checked){                                // && now.getDay() == 1
+ var oncolor;
+  if(now.getDay()==1){oncolor="#ffdd22";}else{ oncolor="lightgreen";} 
+  
   if (timeinmin >= convertH2M(fruits[0]) && timeinmin < convertH2M(fruits[1])) {
-   monday.getElementsByClassName('noUi-connect')[0].style.background = "#ffdd22";   // change color
+   monday.getElementsByClassName('noUi-connect')[0].style.background = oncolor;   // sunfloweryellow
   }else{
      monday.getElementsByClassName('noUi-connect')[0].style.background = "green";   // change color
   }
   
     if (timeinmin >= convertH2M(fruits[2]) && timeinmin < convertH2M(fruits[3])) {
-   monday.getElementsByClassName('noUi-connect')[1].style.background = "#ffdd22";   // change color
+   monday.getElementsByClassName('noUi-connect')[1].style.background = oncolor;   // sunfloweryellow
   }else{
      monday.getElementsByClassName('noUi-connect')[1].style.background = "green";   // change color
   }
   
     if (timeinmin >= convertH2M(fruits[4]) && timeinmin < convertH2M(fruits[5])) {
-   monday.getElementsByClassName('noUi-connect')[2].style.background = "#ffdd22";   // change color
+   monday.getElementsByClassName('noUi-connect')[2].style.background = oncolor;   // sunfloweryellow
   }else{
      monday.getElementsByClassName('noUi-connect')[2].style.background = "green";   // change color
   }
@@ -2209,23 +2212,27 @@ if(document.getElementById("checkmonday").checked){                             
   monday.getElementsByClassName('noUi-connect')[2].style.background = "lightgray";   // change color
 }
   
+  
  var fruits = tuesday.noUiSlider.get();
  
-if(document.getElementById("checktuesday").checked){   
+if(document.getElementById("checktuesday").checked){
+  var oncolor;
+  if(now.getDay()==2){oncolor="#ffdd22";}else{ oncolor="lightgreen";} 
+  
   if (timeinmin >= convertH2M(fruits[0]) && timeinmin < convertH2M(fruits[1])) {
-   tuesday.getElementsByClassName('noUi-connect')[0].style.background = "#ffdd22";   // change color
+   tuesday.getElementsByClassName('noUi-connect')[0].style.background = oncolor;   // sunfloweryellow
   }else{
      tuesday.getElementsByClassName('noUi-connect')[0].style.background = "green";   // change color
   }
   
   if (timeinmin >= convertH2M(fruits[2]) && timeinmin < convertH2M(fruits[3])) {
-   tuesday.getElementsByClassName('noUi-connect')[1].style.background = "#ffdd22";   // change color
+   tuesday.getElementsByClassName('noUi-connect')[1].style.background = oncolor;   // change color
   }else{
      tuesday.getElementsByClassName('noUi-connect')[1].style.background = "green";   // change color
   }
   
   if (timeinmin >= convertH2M(fruits[4]) && timeinmin < convertH2M(fruits[5])) {
-   tuesday.getElementsByClassName('noUi-connect')[2].style.background = "#ffdd22";   // change color
+   tuesday.getElementsByClassName('noUi-connect')[2].style.background = oncolor;   // change color
   }else{
      tuesday.getElementsByClassName('noUi-connect')[2].style.background = "green";   // change color
   }
@@ -2239,20 +2246,23 @@ if(document.getElementById("checktuesday").checked){
 var fruits = wednesday.noUiSlider.get();
  
 if(document.getElementById("checkwednesday").checked){   
+    var oncolor;
+  if(now.getDay()==3){oncolor="#ffdd22";}else{ oncolor="lightgreen";} 
+  
   if (timeinmin >= convertH2M(fruits[0]) && timeinmin < convertH2M(fruits[1])) {
-   wednesday.getElementsByClassName('noUi-connect')[0].style.background = "#ffdd22";   // change color
+   wednesday.getElementsByClassName('noUi-connect')[0].style.background = oncolor;   // sunfloweryellow
   }else{
      wednesday.getElementsByClassName('noUi-connect')[0].style.background = "green";   // change color
   }
   
   if (timeinmin >= convertH2M(fruits[2]) && timeinmin < convertH2M(fruits[3])) {
-   wednesday.getElementsByClassName('noUi-connect')[1].style.background = "#ffdd22";   // change color
+   wednesday.getElementsByClassName('noUi-connect')[1].style.background = oncolor;   // change color
   }else{
      wednesday.getElementsByClassName('noUi-connect')[1].style.background = "green";   // change color
   }
   
   if (timeinmin >= convertH2M(fruits[4]) && timeinmin < convertH2M(fruits[5])) {
-   wednesday.getElementsByClassName('noUi-connect')[2].style.background = "#ffdd22";   // change color
+   wednesday.getElementsByClassName('noUi-connect')[2].style.background = oncolor;   // change color
   }else{
      wednesday.getElementsByClassName('noUi-connect')[2].style.background = "green";   // change color
   }
@@ -2265,7 +2275,14 @@ if(document.getElementById("checkwednesday").checked){
 
 
 
+
+
+
+
+
+
 // grey out dissable slider part if checkbox not checked
+// maybe addeventlistnener
 if(!document.getElementById("ct1m").checked){    //not checked
   monday.getElementsByClassName('noUi-connect')[0].style.background = "lightgray";   // grey out dissable
 }
@@ -2714,5 +2731,5 @@ else window.SunCalc = SunCalc;
 
 </script>
 </body>
-</html> 
+</html>
 
