@@ -2274,6 +2274,35 @@ if(document.getElementById("checkwednesday").checked){
 
 
 
+var slider_times = thursday.noUiSlider.get();
+ 
+if(document.getElementById("checkthursday").checked){   
+    var oncolor;
+  if(now.getDay()==4){oncolor="#ffdd22";}else{ oncolor="lightgreen";} 
+  
+  if (timeinmin >= convertH2M(slider_times[0]) && timeinmin < convertH2M(slider_times[1])) {
+   thursday.getElementsByClassName('noUi-connect')[0].style.background = oncolor;   // sunfloweryellow
+  }else{
+     thursday.getElementsByClassName('noUi-connect')[0].style.background = "green";   // change color
+  }
+  
+  if (timeinmin >= convertH2M(slider_times[2]) && timeinmin < convertH2M(slider_times[3])) {
+   thursday.getElementsByClassName('noUi-connect')[1].style.background = oncolor;   // change color
+  }else{
+     thursday.getElementsByClassName('noUi-connect')[1].style.background = "green";   // change color
+  }
+  
+  if (timeinmin >= convertH2M(slider_times[4]) && timeinmin < convertH2M(slider_times[5])) {
+   thursday.getElementsByClassName('noUi-connect')[2].style.background = oncolor;   // change color
+  }else{
+     thursday.getElementsByClassName('noUi-connect')[2].style.background = "green";   // change color
+  }
+}else{
+  thursday.getElementsByClassName('noUi-connect')[0].style.background = "lightgray";   // change color
+  thursday.getElementsByClassName('noUi-connect')[1].style.background = "lightgray";   // change color
+  thursday.getElementsByClassName('noUi-connect')[2].style.background = "lightgray";   // change color
+}
+
 
 
 
