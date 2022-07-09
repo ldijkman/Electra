@@ -2152,7 +2152,7 @@ var currents=((times.sunset.getHours()*60+times.sunset.getMinutes())/1440)*100; 
 const sunrise = document.querySelectorAll('.sunrise');
 sunrise.forEach(sunrise => {
   //box.style.backgroundColor = 'purple'; box.style.width = '300px';
-  sunrise.innerHTML =(lat+","+lon+"&nbsp;<a href='http://www.google.com/search?q="+lat+","+lon+"'>SunRise&nbsp;"+sunriseStr)+"&nbsp;</a>";
+  sunrise.innerHTML =("<!--"+lat+","+lon+"-->&nbsp;<a href='http://www.google.com/search?q="+lat+","+lon+"'>SunRise&nbsp;"+sunriseStr)+"&nbsp;</a>";
 });
 
 const sunset = document.querySelectorAll('.sunset');
